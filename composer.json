@@ -1,0 +1,22 @@
+{
+  "name": "ashterix/exception-handler",
+  "type": "library",
+  "description": "Flexible exception handler for PHP",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Maistrenko",
+      "email": "ashterix69@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "psr-0": {
+      "Exception": "src/"
+    }
+  }
+}
