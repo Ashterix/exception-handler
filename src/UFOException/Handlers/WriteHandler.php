@@ -17,16 +17,17 @@
 namespace UFOException\Handlers;
 
 
+use UFOException\Core\BaseHandler;
 use UFOException\Interfaces\Handlers;
-use UFOException\Traits\HandlerConstruct;
 
-class WriteHandler implements Handlers{
+class WriteHandler extends BaseHandler implements Handlers{
 
-    use HandlerConstruct;
-
+    /**
+     * {@inheritDoc}
+     */
     public function processing()
     {
-        print self::EXCEPTION_HEADLINE . " : " . $this->exception->getMessage();
+        print self::EXCEPTION_HEADLINE . ": " . $this->exceptionMessage();
     }
 
 }

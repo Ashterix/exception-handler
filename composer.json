@@ -12,7 +12,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.4",
+        "ashterix/log-to-file": "dev-master"
     },
     "autoload": {
         "psr-0": {

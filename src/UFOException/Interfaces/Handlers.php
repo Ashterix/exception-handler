@@ -21,6 +21,11 @@ interface Handlers {
 
     const EXCEPTION_HEADLINE = "Caught an exception";
 
+    /**
+     * @description Running exception handling
+     *
+     * @return mixed
+     */
     public function processing();
 
 }

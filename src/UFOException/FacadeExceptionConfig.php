@@ -42,16 +42,26 @@ class FacadeExceptionConfig {
      */
     public function setLogFileName($logFileName)
     {
-        $this->logFileName = $logFileName . ".log";
+        $this->logFileName = $logFileName;
         return $this;
     }
 
 
+    /**
+     * @description Get handler type
+     *
+     * @return int
+     */
     public function getTypeHandler()
     {
         return $this->typeHandler;
     }
 
+    /**
+     * @description Get log filename
+     *
+     * @return string
+     */
     public function getLogFileName()
     {
         return $this->logFileName;

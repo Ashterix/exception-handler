@@ -17,17 +17,19 @@
 namespace UFOException\Handlers;
 
 
+use LogToFile\Logger;
+use UFOException\Core\BaseHandler;
 use UFOException\Interfaces\Handlers;
-use UFOException\Traits\HandlerConstruct;
 
-class LogHandler implements Handlers {
+class LogHandler extends BaseHandler implements Handlers {
 
-    use HandlerConstruct;
-
+    /**
+     * {@inheritDoc}
+     */
     public function processing()
     {
-        $file = fopen($this->config->getLogFileName(), "a+");
-        fwrite($file, $this->exception->getMessage() . "\n");
-        fclose($file);
+        $exceptionLog = new Logger($this->config->getLogFileName());
+        $exceptionLog->write($this->exceptionMessage(), self::EXCEPTION_HEADLINE);
+
     }
 }
