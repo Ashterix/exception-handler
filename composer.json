@@ -5,15 +5,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Alex Maistrenko",
+            "name": "Alex Maystrenko",
             "email": "ashterix69@gmail.com",
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4",
-        "ashterix/log-to-file": "dev-master"
+        "ashterix/log-to-file": "1.*"
     },
     "autoload": {
         "psr-0": {
