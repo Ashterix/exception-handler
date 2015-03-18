@@ -1,7 +1,6 @@
 <?php
 /**
  * exception-handler
- * @version: 1.0.0
  *
  * @file: BaseHandler.php
  * @author Ashterix <ashterix69@gmail.com>
@@ -45,7 +44,7 @@ class BaseHandler {
      *
      * @return string
      */
-    protected function exceptionMessage()
+    public function exceptionMessage()
     {
         $msg = '';
         if ($this->exception->getCode()) {

@@ -1,7 +1,6 @@
 <?php
 /**
  * exception-handler 
- * @version: 1.0.0
  *
  * @file: LogHandler.php
  * @author Ashterix <ashterix69@gmail.com>
@@ -29,7 +28,7 @@ class LogHandler extends BaseHandler implements Handlers {
     public function processing()
     {
         $exceptionLog = new Logger($this->config->getLogFileName());
-        $exceptionLog->write($this->exceptionMessage(), self::EXCEPTION_HEADLINE);
+        $exceptionLog->writeStandard($this->exceptionMessage(), self::EXCEPTION_HEADLINE);
 
     }
 }

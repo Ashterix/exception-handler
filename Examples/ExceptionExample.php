@@ -3,8 +3,16 @@
 use UFOException\FacadeException;
 use UFOException\Interfaces\TypesExceptionHandlers;
 
-require_once('../vendor/autoload.php');
 
+require_once('/vendor/autoload.php');
+
+
+function testException($q = 1) {
+    if ($q == 1) {
+        throw new Exception('My exception message');
+    }
+    echo $q;
+}
 
 $myException = new FacadeException();
 $myException->config
@@ -13,5 +21,12 @@ $myException->config
 $myException->registerHandler();
 
 
+try {
+    testException(1);
+} catch (\Exception $e) {
+    $myException->getExceptionMessage($e);
+}
 
-throw new Exception('My exception message');
+echo PHP_EOL . " The script continues to run " . PHP_EOL;
+
+throw new Exception('My exception message2');

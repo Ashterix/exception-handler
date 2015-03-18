@@ -1,7 +1,6 @@
 <?php
 /**
  * exception-handler 
- * @version: 1.0.0
  *
  * @file: FacadeException.php
  * @author Ashterix <ashterix69@gmail.com>
@@ -17,6 +16,7 @@
 namespace UFOException;
 
 use UFOException\Core\BaseException;
+use UFOException\Core\BaseHandler;
 use UFOException\Interfaces\ExceptionInterface;
 use UFOException\Interfaces\Handlers;
 use UFOException\Interfaces\TypesExceptionHandlers;
@@ -36,7 +36,7 @@ class FacadeException extends BaseException implements TypesExceptionHandlers, E
     /**
      * @var array All handlers
      */
-    private $handlers = [
+    protected $handlers = [
         self::E_TYPE_LOG    => "LogHandler",
         self::E_TYPE_WRITE  => "WriteHandler",
         self::E_TYPE_EMAIL  => "EmailHandler",
@@ -46,7 +46,21 @@ class FacadeException extends BaseException implements TypesExceptionHandlers, E
     /**
      * @var array Handlers appropriate bit mask
      */
-    private $handlersStack = [];
+    protected $handlersStack = [];
+
+    /**
+     * @description Get formatted exception message for anything
+     *
+     * @param \Exception $e
+     *
+     * @return string
+     */
+    public function getExceptionMessage(\Exception $e)
+    {
+        $baseHandler = new BaseHandler($e, $this->config);
+        $this->handlersStack($e);
+        return $baseHandler->exceptionMessage();
+    }
 
     /**
      * @description Run exception handlers

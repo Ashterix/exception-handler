@@ -1,7 +1,6 @@
 <?php
 /**
  * exception-handler 
- * @version: 1.0.0
  *
  * @file: Handlers.php
  * @author Ashterix <ashterix69@gmail.com>
